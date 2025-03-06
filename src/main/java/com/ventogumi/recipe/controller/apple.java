@@ -4,5 +4,5 @@ public class apple {
     //samsung
     //illon musklk
     //samsung
-    //푸쉬 거부하면 뒤진다
+    //푸쉬 거부하면 혼난다.
 }
