@@ -4,5 +4,5 @@ public class apple {
     //samsung
     //illon musklk
     //samsung
-    //푸쉬 거부하면 혼난다.
+    //바른말 고운말을 쓰겟습니다.
 }
