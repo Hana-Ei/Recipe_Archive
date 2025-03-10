@@ -1,0 +1,335 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100px; /* 헤더 높이 고정 */
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  position: relative;
+  /* top: 50%; 헤더 바로 아래 위치 */
+  width: 100%;
+  height: 5;
+  /* z-index: 9; 헤더보다 아래에 위치 */
+}
+
+.logo {
+  margin-right: auto;
+  flex: 0 0 auto; /* 로고가 늘어나지 않도록 고정 */
+  margin-left: 70px; /* 오른쪽으로 이동 (값 조절 가능) */
+}
+
+.logo img {
+  height: 150px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+ 
+  font-family: 'Jua', sans-serif;
+  font-size: large;
+  
+}
+
+.menu li {
+ 
+  margin: 0 40px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu2 {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 200px;
+  margin-left: 30px;
+  font-family: 'Jua', sans-serif;
+  font-size: medium;
+}
+
+.menu2 li {
+  margin: 0 10px;
+}
+
+.menu2 .login-button {
+  background-color: #4CAF50; /* 버튼 배경색 */
+  color: white; /* 텍스트 색상 */
+  padding: 8px 20px; /* 상하/좌우 패딩 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  text-decoration: none; /* 밑줄 제거 */
+  transition: background-color 0.3s; /* 부드러운 색상 변화 */
+  display: inline-block; /* 박스 형태 유지 */
+}
+
+.menu2 .login-button:hover {
+  background-color: #45a049; /* 호버 시 배경색 변경 */
+}
+
+
+/* 알림 아이콘 이미지 크기 조절 */
+.menu2 li #alarm{
+  width: 35px; /* 원하는 너비 */
+  height: 35px; /* 원하는 높이 */
+  object-fit: contain; /* 이미지 비율 유지 */
+  
+  
+}
+
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 110px; /* 알림 아이콘 아래로 위치 */
+  right: 280px; /* 오른쪽 정렬 */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 200px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.notification-dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-dropdown ul li {
+  margin: 10px 0;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-dropdown ul li:last-child {
+  border-bottom: none;
+}
+
+.notification-dropdown ul li:hover {
+  background-color: #f9f9f9;
+}
+
+
+
+/* 호버 시 약간 확대 효과 */
+.menu2 li #alarm:hover {
+ 
+  cursor: pointer; /* 클릭 가능 커서로 변경 */
+  animation: shake 0.5s ease-in-out; /* 0.5초간 흔들림 */
+}
+
+/*언어 교체효과*/
+/* 언어 선택기 스타일 */
+.language-selector {
+  position: relative;
+  margin-left: 15px;
+  margin-top: 15px;
+  
+}
+
+.language-icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 6px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.language-dropdown {
+  display: none;
+  position: absolute;
+  left: 100%; /* 오른쪽으로 이동 */
+  top: 1%; /* 수직 가운데 정렬 */
+  transform: translateY(-50%); /* 정확한 중앙 배치 */
+  margin-left: 10px; /* 이미지와 간격 */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 3px;
+  min-width: 100px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.language-selector:hover .language-dropdown {
+  display: block;
+}
+
+.language-dropdown li {
+  list-style: none;
+  margin: 8px 10px;
+  white-space: nowrap;
+}
+
+.language-dropdown a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.language-dropdown a:hover {
+  color: #81e786;
+}
+
+/* 호버 시 아이콘 약간 확대 */
+.language-selector:hover .language-icon {
+  transform: scale(1.1);
+}
+
+/* 화살표 위치 조정 */
+.language-dropdown::before {
+  content: '';
+  position: absolute;
+  left: -16px; /* 화살표 위치 조정 */
+  top: 10%;
+  transform: translateY(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent white transparent transparent; /* 왼쪽 화살표 */
+}
+
+.language-dropdown .selected {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.language-dropdown {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.language-selector:hover .language-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.sidebar {
+  width: 270px;
+  position: fixed;
+  top: 200px; /* 네비 바로 아래 위치 */
+  left: 35px;
+  height: 100%;
+  background-color: #ecfee8;
+  padding-top: 60px;
+  z-index: 8; /* 사이드바가 네비와 겹치지 않도록 */
+  border-radius: 20px;
+  font-family: 'Jua', sans-serif;
+  font-size: medium;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #986c6c;
+  padding: 10px;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #deffc0;
+}
+
+main {
+  padding: 20px;
+  margin-top: 250px; /* 헤더 + 네비게이션의 높이만큼 여백 추가 */
+  margin-left: 290px; /* 사이드바 너비만큼 여백 추가 */
+  text-align: center;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.animal {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  margin: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.animal img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.animal h3 {
+  margin-top: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background: #45a049;
+}
+
+footer {
+  text-align: center;
+  background: #ffffff;
+  color: rgb(212, 189, 189);
+  padding: 10px 0;
+}
