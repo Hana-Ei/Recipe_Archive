@@ -1,0 +1,177 @@
+/* 기본 스타일 초기화 */
+body, h1, h2, form, div, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+/* 헤더 스타일 */
+header {
+    width: 100%;
+    height: 140px;
+    background-color: #f2ffe9;
+    color: #40423d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    position: fixed; /* 고정 위치 설정 */
+    top: 0; /* 상단에 고정 */
+    left: 0;
+    z-index: 10;
+}
+@font-face {
+    font-family: 'KCCMurukmuruk';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem; /* 제목 크기 */
+    font-family: 'KCCMurukmuruk', sans-serif;
+    letter-spacing: 4px /*자간 조절*/
+}
+
+/* 로그인 컨테이너 스타일 */
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+    margin-top: 2rem; /* 헤더와의 간격 */
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* 폼 그룹 스타일 */
+/* 폼 그룹 스타일 수정 */
+.form-group {
+    width: 400px;
+    margin-bottom: 1rem;
+    text-align: left;
+    display: flex; /* Flexbox를 사용하여 나란히 배치 */
+    gap: 1rem; /* 아이디와 비밀번호 필드 사이의 간격 */
+    justify-content: center; /* 추가: 가운데 정렬 */
+
+}
+h1{
+
+    font-size: 2rem;
+    font-family: HY헤드라인M;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 70px; /* Top margin */
+    margin-bottom: 20px; /* Bottom margin */
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 50%;
+    padding: 0.5rem 0; /* 상하 패딩만 남기고 좌우 패딩 제거 */
+    border: none; /* 테두리 제거 */
+    border-bottom: 2px solid #ccc; /* 밑줄 스타일 */
+    font-size: 1rem;
+    background-color: transparent; /* 배경색 제거 */
+
+}
+
+.form-group input:focus {
+    border-bottom-color: #007bff; /* 포커스 시 밑줄 색상 변경 */
+    outline: none; /* 기본 포커스 효과 제거 */
+}
+
+/* 버튼 공통 스타일 */
+.btn {
+    width: 30%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+/* 구글 로그인 버튼 스타일 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 방향 가운데 정렬 */
+    justify-content: center; /* 수평 방향 가운데 정렬 */
+}
+
+.google-btn {
+    box-shadow: 0 7px 7px rgba(0.1, 0.1, 0.1, 0.1);
+    width: 30%;
+    background-color: #ffffff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: auto; /* 추가 */
+    margin-right: auto; /* 추가 */
+}
+
+.google-btn img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.google-btn:hover {
+    background-color: #ff5f3a;
+}
+
+/* 로그인 버튼 스타일 */
+.login-btn {
+    background-color: #d6ffd6;
+    color: #40423d;
+}
+
+.login-btn:hover {
+    background-color: #508150;
+}
+body{
+
+}
+.links {
+    text-align: center;
+    margin-top: 20px; /* Top margin */
+    margin-bottom: 20px; /* Bottom margin */
+}
+
+.links a {
+    color: black; /* Change link color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
