@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recipe Achive</title>
+    <link rel="stylesheet" href="/css/recipeTest.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo"><img src="/img/logo.png" alt="Logo"></div>
+
+        <ul class="menu">
+            <li><a href="#about">레시피</a></li>
+            <li><a href="#animals">커뮤니티</a></li>
+            <li><a href="#visit">Who we are</a></li>
+            <li><a href="#visit">My profile</a></li>
+        </ul>
+
+        <ul class="menu2">
+            <li><a href="../templates/users/login.html" class="login-button">로그인</a></li>
+            <li>
+                <a href="#notification" id="notification-button">
+                    <img src="/img/free-icon-bell-7130853.png" alt="alarm" id="alarm">
+                </a>
+                <div id="notification-list" class="notification-dropdown">
+                    <ul>
+                        <li>새로운 레시피가 등록되었습니다.</li>
+                        <li>팔로우한 사용자가 새로운 게시물을 올렸습니다.</li>
+                        <li>오늘의 추천 메뉴를 확인해보세요.</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="language-selector">
+                <a href="#language">
+                    <img src="/img/free-icon-earth-globe-117965.png" alt="language" class="language-icon">
+                </a>
+                <ul class="language-dropdown">
+                    <li><a href="#kr">한국어</a></li>
+                    <li><a href="#jp">日本語</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="sidebar">
+    <ul>
+        <li><a href="#about">내 활동</a></li>
+        <li><a href="#animals">팔로워 레시피</a></li>
+        <li><a href="#visit">오늘의 메뉴 추천</a></li>
+        <li><a href="#visit">게시물 등록</a></li>
+    </ul>
+</aside>
+
+<main>
+    <section id="introduce">
+        <h2>매일 반복되는 냉장고 앞의 고민</h2>
+        <h2>레시피 아카이브와 함께 해결해요!</h2>
+    </section>
+    <br><br><br><br>
+
+    <section id="검색">
+        <h2>메뉴 검색</h2>
+        <div class="animal">
+            <img src="lion.jpg" alt="Lion" />
+            <h3>Lion</h3>
+            <p>The king of the jungle, powerful and majestic.</p>
+        </div>
+        <div class="animal">
+            <img src="elephant.jpg" alt="Elephant" />
+            <h3>Elephant</h3>
+            <p>Gentle giants with incredible memory and strength.</p>
+        </div>
+        <div class="animal">
+            <img src="penguin.jpg" alt="Penguin" />
+            <h3>Penguin</h3>
+            <p>Playful swimmers from the icy Antarctic.</p>
+        </div>
+    </section>
+
+    <section id="visit">
+        <h2>Visit Us</h2>
+        <p>We are open 24/7 online! Explore our virtual tours and animal cams.</p>
+        <a href="#animals" class="button">Explore Animals</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Recipe Achive. All rights reserved. hp</p>
+</footer>
+
+<!-- 외부 JavaScript 파일 연결 -->
+<script src="../static/js/recipeTest.js"></script>
+</body>
+</html>
