@@ -1,0 +1,105 @@
+/* 기본 스타일 초기화 */
+body, h1, form, div, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* 헤더 스타일 */
+header {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f2ffe9;
+    color: #40423d;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* 회원가입 컨테이너 스타일 */
+.signup-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* 인증번호 입력 및 버튼 */
+.verification-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.verification-group input {
+    flex: 2;
+}
+
+.verification-group .verify-btn {
+    flex: 1;
+    background-color: #508150;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.verification-group .verify-btn:hover {
+    background-color: #ff5f3a;
+}
+
+/* 버튼 스타일 */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #d6ffd6;
+    color: #40423d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #508150;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 1.5rem;
+    }
+}
