@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="../../static/css/signup.css">
+    <link rel="stylesheet" href="/css/signup.css">
 </head>
 <body>
 <header>
@@ -12,42 +12,42 @@
 </header>
 <main>
     <div class="signup-container">
-        <form action="/users/signup" method="post">
+        <form action="/users/register" method="post" th:object="${user}">
             <!-- 닉네임 -->
             <div class="form-group">
-                <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" name="nickname" placeholder="닉네임" required>
+                <label for="user_nickname">닉네임</label>
+                <input type="text" id="user_nickname" name="user_nickname" placeholder="닉네임" th:field="*{user_nickname}" required>
             </div>
 
             <!-- 아이디 -->
             <div class="form-group">
-                <label for="username">아이디</label>
-                <input type="text" id="username" name="username" placeholder="아이디" required>
+                <label for="user_name">아이디</label>
+                <input type="text" id="user_name" name="user_name" placeholder="아이디" th:field="*{user_name}" required>
             </div>
 
             <!-- 비밀번호 -->
             <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="비밀번호" required>
+                <label for="user_password">비밀번호</label>
+                <input type="password" id="user_password" name="user_password" placeholder="비밀번호" th:field="*{user_password}" required>
             </div>
 
-            <!-- 비밀번호 확인 -->
-            <div class="form-group">
-                <label for="confirm-password">비밀번호 확인</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호 확인" required>
-            </div>
+<!--            &lt;!&ndash; 비밀번호 확인 &ndash;&gt;-->
+<!--            <div class="form-group">-->
+<!--                <label for="confirm-password">비밀번호 확인</label>-->
+<!--                <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호 확인" th:field="*{user_password}" required>-->
+<!--            </div>-->
 
             <!-- 이메일 -->
             <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" id="email" name="email" placeholder="이메일" required>
+                <label for="user_email">이메일</label>
+                <input type="email" id="user_email" name="user_email" placeholder="이메일" th:field="*{user_email}" required>
             </div>
 
             <!-- 인증번호 -->
-            <div class="form-group verification-group">
-                <input type="text" id="verification-code" name="verification-code" placeholder="인증번호 입력" required>
-                <button type="button" class="btn verify-btn">인증번호 받기</button>
-            </div>
+<!--            <div class="form-group verification-group">-->
+<!--                <input type="text" id="verification-code" name="verification-code" placeholder="인증번호 입력" required>-->
+<!--                <button type="button" class="btn verify-btn">인증번호 받기</button>-->
+<!--            </div>-->
 
             <!-- 회원가입 버튼 -->
             <button type="submit" class="btn signup-btn">회원가입</button>
