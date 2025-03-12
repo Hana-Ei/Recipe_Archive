@@ -14,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
     private final UserRepository userRepository;
+
+
+
     private final PasswordEncoder passwordEncoder;
     // 회원가입
     @Transactional
@@ -23,5 +26,10 @@ public class UserService {
         // 권한부여
         user.setUser_role(Role.ROLE_USER);
         return userRepository.save(user);
+    }
+
+
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }
