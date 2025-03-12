@@ -44,15 +44,6 @@ public class UserController {
         return "users/login";
     }
 
-    // 마이페이지 정보 조회 API
-    @GetMapping("/mypage")
-    public ResponseEntity<User> getUserProfile(@AuthenticationPrincipal UserDetails userDetails) {
-        if (userDetails == null) {
-            return ResponseEntity.status(401).build(); // 로그인 안 했으면 401 Unauthorized
-        }
-        User user = userService.getUserByUsername(userDetails.getUsername());
-        return ResponseEntity.ok(user);
-    }
 
 
 
