@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 // 스프링 시큐리티 설정
@@ -20,7 +22,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                 .requestMatchers("/css/**", "/js/**", "/img/**").permitAll()
                 // 인증없이접근할 수 있는 URL을 설정
-                .requestMatchers("/", "/login", "/signup", "/user").permitAll()
+                .requestMatchers("/","/users/register", "/error").permitAll()
                 // /admin/* URL은 ADMIN, MANAGER, USER 권한을 가진 사용자만 접근 가능
                 .requestMatchers("/admin/*").hasAnyRole("ADMIN", "MANAGER")
                 // 나머지 URL은 인증된 사용자만 접근 가능
@@ -51,5 +53,13 @@ public class SecurityConfig {
 
 
         return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        // 양방향 암호화 : 패스워드 <-> 암호화된 패스워드
+        // 단방향 암호화 : 패스워드 -> 암호화된 패스워드 v
+        return new BCryptPasswordEncoder();
+
     }
 }
