@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 20px;
+      width: 100%;
+      max-width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .login-btn {
+      background-color: #6ab04c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      margin-top: 80px;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #e0f7d4;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 80px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding: 12px 0;
+    }
+    main {
+      flex-grow: 1;
+      padding: 30px;
+      margin-left: 250px;
+    }
+    .profile {
+      display: flex;
+      gap: 20px;
+      background-color: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .profile-photo {
+      width: 80px;
+      height: 80px;
+      background-color: gray;
+      border-radius: 50%;
+    }
+    .profile-info {
+      flex-grow: 1;
+    }
+    .recipe-list {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .recipe-card {
+      background-color: #ffcc80;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      flex: 1;
+    }
+    .badge-system {
+      background-color: #fff3e0;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">レシピアーカイブ</div>
+  <nav>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">커뮤니티</a></li>
+      <li><a href="#">Who we are</a></li>
+      <li><a href="#">My profile</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <button class="login-btn">로그인</button>
+    <img src="bell-icon.png" alt="알림" class="icon">
+    <img src="globe-icon.png" alt="언어 변경" class="icon">
+  </div>
+</header>
+
+<div class="sidebar">
+  <ul>
+    <li><a href="#">내 활동</a></li>
+    <li><a href="#">내 팔로잉 레시피</a></li>
+    <li><a href="#">오늘의 추천</a></li>
+    <li><a href="#">게시물 등록</a></li>
+  </ul>
+</div>
+
+<div class="container">
+  <main>
+    <section class="profile">
+      <div class="profile-photo"></div>
+      <div class="profile-info">
+        <h2>마이프로필</h2>
+        <p>이름: 강범</p>
+        <p>가입일: 2025년 1월 1일</p>
+        <p>이메일: dsa@dsabusan.com</p>
+        <p>팔로잉: 12명 | 팔로워: 8명</p>
+        <button class="activity-btn">내 활동</button>
+        <button class="edit-profile-btn">프로필 수정</button>
+      </div>
+    </section>
+
+    <section class="recipes-preview">
+      <h3>내 레시피 미리보기</h3>
+      <div class="recipe-list">
+        <div class="recipe-card">썸네일(이미지/영상) 레시피제목(간단설명)</div>
+        <div class="recipe-card">썸네일(이미지/영상) 레시피제목(간단설명)</div>
+        <div class="recipe-card">썸네일(이미지/영상) 레시피제목(간단설명)</div>
+        <div class="recipe-card">썸네일(이미지/영상) 레시피제목(간단설명)</div>
+      </div>
+    </section>
+
+    <section class="badge-system">
+      <h3>내 칭호 (Gamification)</h3>
+      <p>현재 레벨: 닭</p>
+      <p>알(egg) - 가입 시</p>
+      <p>병아리(chick) - 레시피 5개 등록 OR 좋아요 50개 획득 OR 팔로워 10명</p>
+      <p>닭(chicken) - 레시피 20개 등록 OR 좋아요 200개 획득 OR 팔로워 50명</p>
+    </section>
+  </main>
+</div>
+</body>
+</html>

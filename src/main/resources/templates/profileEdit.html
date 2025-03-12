@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로필 수정 페이지</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 20px;
+      width: 100%;
+      max-width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .login-btn {
+      background-color: #6ab04c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      margin-top: 80px;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #e0f7d4;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 80px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding: 12px 0;
+    }
+    main {
+      flex-grow: 1;
+      padding: 30px;
+      margin-left: 250px;
+    }
+    .profile-edit-section {
+      background-color: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .profile-edit-section label {
+      font-weight: bold;
+    }
+    .profile-edit-section input, .profile-edit-section textarea, .profile-edit-section select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .save-btn {
+      background-color: #6ab04c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">レシピアーカイブ</div>
+  <nav>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">커뮤니티</a></li>
+      <li><a href="#">Who we are</a></li>
+      <li><a href="#">My profile</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <button class="login-btn">로그인</button>
+    <img src="bell-icon.png" alt="알림" class="icon">
+    <img src="globe-icon.png" alt="언어 변경" class="icon">
+  </div>
+</header>
+
+<div class="sidebar">
+  <ul>
+    <li><a href="#">내 활동</a></li>
+    <li><a href="#">내 팔로잉 레시피</a></li>
+    <li><a href="#">오늘의 추천</a></li>
+    <li><a href="#">게시물 등록</a></li>
+  </ul>
+</div>
+
+<div class="container">
+  <main>
+    <section class="profile-edit-section">
+      <h2>프로필 수정</h2>
+      <label for="name">이름:</label>
+      <input type="text" id="name" placeholder="이름을 입력하세요">
+
+      <label for="email">이메일:</label>
+      <input type="email" id="email" placeholder="이메일을 입력하세요">
+
+      <label for="phone">휴대전화:</label>
+      <input type="tel" id="phone" placeholder="휴대전화 번호를 입력하세요">
+
+      <label for="bio">자기소개:</label>
+      <textarea id="bio" rows="4" placeholder="자기소개를 입력하세요"></textarea>
+
+      <label for="privacy">공개 범위:</label>
+      <select id="privacy">
+        <option value="all">전체 공개</option>
+        <option value="followers">내가 팔로우한 사람에게만 공개</option>
+        <option value="private">비공개</option>
+      </select>
+
+      <button class="save-btn">저장</button>
+    </section>
+  </main>
+</div>
+</body>
+</html>
