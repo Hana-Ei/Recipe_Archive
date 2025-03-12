@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 활동 페이지</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            width: 100%;
+            max-width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+        .login-btn {
+            background-color: #6ab04c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            margin-top: 80px;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #e0f7d4;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 80px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 12px 0;
+        }
+        main {
+            flex-grow: 1;
+            padding: 30px;
+            margin-left: 250px;
+        }
+        .activity-section {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .activity-tabs {
+            display: flex;
+            gap: 15px;
+            background-color: #b0eb9c;
+            padding: 10px;
+            border-radius: 5px;
+            justify-content: center;
+        }
+        .activity-tab {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: none;
+        }
+        .activity-tab.active {
+            text-decoration: underline;
+        }
+        .activity-content {
+            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+    <script>
+        function showActivity(type) {
+            document.getElementById("activity-content").innerText = type + " 내용 표시 중...";
+            let tabs = document.querySelectorAll(".activity-tab");
+            tabs.forEach(tab => tab.classList.remove("active"));
+            document.getElementById(type).classList.add("active");
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="logo">レシピアーカイブ</div>
+    <nav>
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">Who we are</a></li>
+            <li><a href="#">My profile</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <button class="login-btn">로그인</button>
+        <img src="bell-icon.png" alt="알림" class="icon">
+        <img src="globe-icon.png" alt="언어 변경" class="icon">
+    </div>
+</header>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="#">내 활동</a></li>
+        <li><a href="#">내 팔로잉 레시피</a></li>
+        <li><a href="#">오늘의 추천</a></li>
+        <li><a href="#">게시물 등록</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <main>
+        <h2>내 활동</h2>
+        <div class="activity-section">
+            <div class="activity-tabs">
+                <button id="내 댓글" class="activity-tab active" onclick="showActivity('내 댓글')">내 댓글</button>
+                <button id="좋아요 누른 글" class="activity-tab" onclick="showActivity('좋아요 누른 글')">좋아요 누른 글</button>
+                <button id="스크랩한 레시피" class="activity-tab" onclick="showActivity('스크랩한 레시피')">스크랩한 레시피</button>
+            </div>
+            <div id="activity-content" class="activity-content">내 댓글 내용 표시 중...</div>
+        </div>
+        <section>
+            <h3>내 레시피</h3>
+            <p>내 레시피 목록...</p>
+        </section>
+        <section>
+            <h3>내 게시물</h3>
+            <p>내 게시물 목록...</p>
+        </section>
+    </main>
+</div>
+</body>
+</html>
