@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // 알림 목록 외부를 클릭하면 목록을 숨김
-  document.addEventListener('click', function(event) {
+  alarmIcon.addEventListener('click', function(event) {
     if (!alarmIcon.contains(event.target) && !notificationList.contains(event.target)) {
       notificationList.style.display = 'none';
     }

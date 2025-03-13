@@ -28,6 +28,7 @@ public class AuthenticatedUser implements UserDetails {
     // 사용자의 패스워드 리턴
     @Override
     public String getPassword() {
+
         return user.getUser_password();
     }
 

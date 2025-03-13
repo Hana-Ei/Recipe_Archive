@@ -33,11 +33,10 @@ public class SecurityConfig {
                         // 사용자가 지정한 로그인 경로를 사용하겠다.
                         .loginPage("/users/login")
                         // 로그인 아이디의 파라미터 이름을 설정 기본값으로 username을 사용한다.
-//                        .usernameParameter("username")
+                        .loginProcessingUrl("/users/login") // 로그인 요청 URL
+                        .usernameParameter("user_name")
 //                        로그인 비밀번호의 파라미터 이름을 설정 기본값으로 password를 사용한다.
-//                        .passwordParameter("password")
-                        // 로그인 인증을 처리하는 URL
-                        .loginProcessingUrl("/users/login")
+                        .passwordParameter("user_password")
                         // 로그인이 성공했을 때 이동할 경로
                         .defaultSuccessUrl("/users/login-success")
                         // 로그인이 실패했을 때 이동할 경로
@@ -50,7 +49,6 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/")
                         .invalidateHttpSession(true)
                         .deleteCookies("JSESSIONID"));
-
 
         return http.build();
     }
