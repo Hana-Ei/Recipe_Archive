@@ -55,34 +55,34 @@ public class UserService {
         // 유저 저장
         return userRepository.save(user);
     }
-
-
-    // id로 회원 정보를 조회하는 메서드
-    public User getUserById(Long id) {
-
-        Optional<User> result = userRepository.findById(id);
-
-        if(result.isPresent()) {
-            return result.get();
-        }
-
-        throw new RuntimeException("회원정보가 없습니다.");
-    }
-
-    // 전체 회원정보 조회
-    public List<User> getAll() {
-        List<User> result = userRepository.findAll();
-        return result;
-    }
-
-
-
-    public User getUserByUsername(String user_name) {
-        User user = userRepository.findByUser_name(user_name);
-        if(user == null) {
-            throw new IllegalArgumentException("존재하지 않는 유저입니다.");
-        }
-        return user;
-    }
+//
+//
+//    // id로 회원 정보를 조회하는 메서드
+//    public User getUserById(Long id) {
+//
+//        Optional<User> result = userRepository.findById(id);
+//
+//        if(result.isPresent()) {
+//            return result.get();
+//        }
+//
+//        throw new RuntimeException("회원정보가 없습니다.");
+//    }
+//
+//    // 전체 회원정보 조회
+//    public List<User> getAll() {
+//        List<User> result = userRepository.findAll();
+//        return result;
+//    }
+//
+//
+//
+//    public User getUserByUsername(String user_name) {
+//        User user = userRepository.findByUser_name(user_name);
+//        if(user == null) {
+//            throw new IllegalArgumentException("존재하지 않는 유저입니다.");
+//        }
+//        return user;
+//    }
 
 }
