@@ -55,3 +55,82 @@
         <li><a href="#visit">게시물 등록</a></li>
     </ul>
 </aside>
+
+<main>
+    <section id="board">
+        <h2>커뮤니티 게시판</h2>
+
+        <!-- 검색 및 필터 기능 -->
+        <div class="search-filter">
+            <input type="text" id="search-input" placeholder="검색어 입력..." />
+            <button id="search-btn">검색</button>
+            <select id="filter">
+                <option value="recommend">추천수</option>
+                <option value="views">조회수</option>
+                <option value="comments">댓글수</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>추천수</th>
+                <th>댓글수</th>
+                <th>상세보기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 게시글 목록 반복 (실제 데이터로 교체 필요) -->
+            <tr>
+                <td>1</td>
+                <td><a href="#">레시피 제목 예시 1</a></td>
+                <td>작성자1</td>
+                <td>2025-03-10</td>
+                <td>123</td>
+                <td>45</td>
+                <td>[3]</td> <!-- 댓글 수 -->
+                <td><a href="#">보기</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#">레시피 제목 예시 2</a></td>
+                <td>작성자2</td>
+                <td>2025-03-09</td>
+                <td>98</td>
+                <td>30</td>
+                <td>[2]</td> <!-- 댓글 수 -->
+                <td><a href="#">보기</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="#">레시피 제목 예시 3</a></td>
+                <td>작성자3</td>
+                <td>2025-03-08</td>
+                <td>54</td>
+                <td>15</td>
+                <td>[1]</td> <!-- 댓글 수 -->
+                <td><a href="#">보기</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- 게시글 등록 버튼 -->
+        <div class="add-post">
+            <a href="#add-post" class="button">새 게시글 등록</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Recipe Achive. All rights reserved. hp</p>
+</footer>
+
+<!-- 외부 JavaScript 파일 연결 -->
+<script src="/static/js/recipeTest.js"></script>
+</body>
+</html>
