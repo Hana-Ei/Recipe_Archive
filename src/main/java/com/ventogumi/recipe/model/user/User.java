@@ -9,18 +9,23 @@ import com.ventogumi.recipe.model.food.Recipe_comment;
 import com.ventogumi.recipe.model.relish.Relish;
 import com.ventogumi.recipe.model.scrap.Scrap;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
+
+@Builder
+@AllArgsConstructor // 모든 필드를 파라미터로 받는 생성자
+@NoArgsConstructor  // 기본 생성자
 @Entity
 @Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id; // 기본키
+
+
     @Column(nullable = false)
     private String user_name; // 로그인 아이디. 소셜 로그인의 경우 소셜이 제공하는 이메일
     @Column(nullable = false)
