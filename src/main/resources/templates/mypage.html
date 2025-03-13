@@ -137,6 +137,22 @@
   </style>
 </head>
 <body>
+<script>
+  // 마이페이지 데이터 불러오기
+  async function loadUserProfile() {
+    const response = await fetch("/api/user/mypage");
+    if (response.ok) {
+      const user = await response.json();
+      document.getElementById("username").innerText = user.username;
+      document.getElementById("email").innerText = user.email;
+    } else {
+      alert("로그인이 필요합니다.");
+      window.location.href = "/login"; // 로그인 페이지로 이동
+    }
+  }
+  // 페이지 로드 시 실행
+  loadUserProfile();
+</script>
 <header>
   <div class="logo">レシピアーカイブ</div>
   <nav>
