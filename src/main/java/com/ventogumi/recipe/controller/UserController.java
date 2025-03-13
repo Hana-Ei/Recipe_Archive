@@ -5,6 +5,9 @@ import com.ventogumi.recipe.model.user.User_createDto;
 import com.ventogumi.recipe.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -67,5 +70,15 @@ public class UserController {
         log.info("로그인 실패!");
         return "redirect:/users/login";
     }
+//     // 마이페이지 정보 조회 API
+//     @GetMapping("/mypage")
+//     public ResponseEntity<User> getUserProfile(@AuthenticationPrincipal UserDetails userDetails) {
+//         if (userDetails == null) {
+//             return ResponseEntity.status(401).build(); // 로그인 안 했으면 401 Unauthorized
+//         }
+//         User user = userService.getUserByUsername(userDetails.getUsername());
+//         return ResponseEntity.ok(user);
+//     }
+
 
 }

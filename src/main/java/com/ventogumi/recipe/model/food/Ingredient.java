@@ -16,7 +16,9 @@ public class Ingredient {
     @Column(nullable = false, length = 77)
     private String ingredient_capacity; // 재료 양을 저장합니다. 단위 포함
     @Column(nullable = true, columnDefinition = "TEXT")
-    private String ingredients_note; // 재료에 대한 비고 정보를 저장합니다.
+    private String ingredient_note; // 재료에 대한 비고 정보를 저장합니다.
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String ingredient_all;
 
     @OneToOne(fetch = FetchType.LAZY) // MapsID는 복합키 구성에 필수
     @JoinColumns({

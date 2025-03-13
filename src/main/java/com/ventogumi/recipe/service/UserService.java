@@ -25,6 +25,9 @@ import static com.ventogumi.recipe.model.user.Rank.EGG;
 public class UserService {
 
     private final UserRepository userRepository;
+
+
+
     private final PasswordEncoder passwordEncoder;
     // 회원가입
     @Transactional
@@ -85,4 +88,8 @@ public class UserService {
 //        return user;
 //    }
 
+
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }
