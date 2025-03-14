@@ -1,6 +1,5 @@
 package com.ventogumi.recipe.service;
 
-import com.ventogumi.recipe.model.user.Range;
 import com.ventogumi.recipe.model.user.Role;
 import com.ventogumi.recipe.model.user.User;
 import com.ventogumi.recipe.repository.UserRepository;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -58,38 +56,42 @@ public class UserService {
         // 유저 저장
         return userRepository.save(user);
     }
-//
-//
-//    // id로 회원 정보를 조회하는 메서드
-//    public User getUserById(Long id) {
-//
-//        Optional<User> result = userRepository.findById(id);
-//
-//        if(result.isPresent()) {
-//            return result.get();
-//        }
-//
-//        throw new RuntimeException("회원정보가 없습니다.");
-//    }
-//
-//    // 전체 회원정보 조회
-//    public List<User> getAll() {
-//        List<User> result = userRepository.findAll();
-//        return result;
-//    }
-//
-//
-//
-//    public User getUserByUsername(String user_name) {
-//        User user = userRepository.findByUser_name(user_name);
-//        if(user == null) {
-//            throw new IllegalArgumentException("존재하지 않는 유저입니다.");
-//        }
-//        return user;
-//    }
 
 
-    public User getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    // id로 회원 정보를 조회하는 메서드
+    public User getUserById(Long id) {
+
+        Optional<User> result = userRepository.findById(id);
+
+        if(result.isPresent()) {
+            return result.get();
+        }
+
+        throw new RuntimeException("회원정보가 없습니다.");
     }
+
+    // 전체 회원정보 조회
+    public List<User> getAll() {
+        List<User> result = userRepository.findAll();
+        return result;
+    }
+
+
+
+    public User getUserByUsername(String user_name) {
+        Optional<User> user = userRepository.findByUser_name(user_name);
+        if(user.isEmpty()) {
+            throw new IllegalArgumentException("존재하지 않는 유저입니다.");
+        }
+        return user.orElse(null);
+    }
+
+
+
+
+
+//
+//    public User getUserByUsername(String username) {
+//        return userRepository.findByUsername(username);
+//    }
 }
