@@ -3,8 +3,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/recipe
     username: root
-    password: "root"
+    password: root
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+  profiles:
+    include:
+    - oauth

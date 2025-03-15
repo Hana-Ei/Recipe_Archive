@@ -25,7 +25,6 @@ public class AuthenticationUserDetails implements UserDetailsService {
        User user = userRepository.findByUser_name(user_name).orElseThrow(() ->
                 new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
 
-
         return new AuthenticatedUser(user);
     }
 
