@@ -15,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Slf4j
@@ -52,7 +53,11 @@ public class UserController {
 
     // 로그인 페이지 이동
     @GetMapping("users/login")
-    public String login(Model model) {
+    public String login(
+            @RequestParam(name = "loginErrorMessage", required = false) String loginErrorMessage,
+            Model model) {
+        log.info("loginErrorMessage: {}", loginErrorMessage);
+        if(loginErrorMessage != null) model.addAttribute("loginErrorMessage", loginErrorMessage);
         model.addAttribute("user", new User());
         return "users/login";
     }

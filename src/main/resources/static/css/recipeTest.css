@@ -37,11 +37,11 @@ nav {
 .logo {
   margin-right: auto;
   flex: 0 0 auto; /* 로고가 늘어나지 않도록 고정 */
-  margin-left: 70px; /* 오른쪽으로 이동 (값 조절 가능) */
+  margin-left: 50px; /* 오른쪽으로 이동 (값 조절 가능) */
 }
 
 .logo img {
-  height: 150px;
+  height: 70px;
   width: auto;
 }
 
@@ -53,14 +53,14 @@ nav {
   position: absolute;
   left: 45%;
   transform: translateX(-50%);
- 
+
   font-family: 'Jua', sans-serif;
   font-size: large;
-  
+
 }
 
 .menu li {
- 
+  font-size : 21px;
   margin: 0 40px;
 }
 .menu li a {
@@ -73,7 +73,7 @@ nav {
   list-style: none;
   padding: 0;
   margin: 0 200px;
-  margin-left: 30px;
+  margin-left: 70px;
   font-family: 'Jua', sans-serif;
   font-size: medium;
 }
@@ -82,19 +82,51 @@ nav {
   margin: 0 10px;
 }
 
-.menu2 .login-button {
-  background-color: #4CAF50; /* 버튼 배경색 */
-  color: white; /* 텍스트 색상 */
-  padding: 8px 20px; /* 상하/좌우 패딩 */
-  border-radius: 5px; /* 모서리 둥글게 */
-  text-decoration: none; /* 밑줄 제거 */
-  transition: background-color 0.3s; /* 부드러운 색상 변화 */
-  display: inline-block; /* 박스 형태 유지 */
+
+/* 로그인/로그아웃 버튼 통일 스타일 */
+.menu2 .login-button,
+.menu2 form button.login-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 24px; /* 패딩 증가 */
+  border-radius: 6px; /* 약간 더 둥글게 */
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+  font-family: 'Jua', sans-serif;
+  font-size: 21px; /* 폰트 크기 증가 */
+  font-weight: 500; /* 약간 두껍게 */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  line-height: normal;
+  box-sizing: border-box;
+  min-width: 100px; /* 최소 너비 설정 */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 약간의 그림자 효과 */
 }
 
-.menu2 .login-button:hover {
-  background-color: #45a049; /* 호버 시 배경색 변경 */
+.menu2 .login-button:hover,
+.menu2 form button.login-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px); /* 호버 시 살짝 위로 올라가는 효과 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* 호버 시 그림자 강화 */
 }
+
+.menu2 .login-button:active,
+.menu2 form button.login-button:active {
+  transform: translateY(1px); /* 클릭 시 살짝 내려가는 효과 */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* 클릭 시 그림자 감소 */
+}
+
+/* 폼 스타일 초기화 */
+.menu2 li form {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
 
 
 /* 알림 아이콘 이미지 크기 조절 */
@@ -102,8 +134,8 @@ nav {
   width: 35px; /* 원하는 너비 */
   height: 35px; /* 원하는 높이 */
   object-fit: contain; /* 이미지 비율 유지 */
-  
-  
+
+
 }
 
 
@@ -153,7 +185,7 @@ nav {
 
 /* 호버 시 약간 확대 효과 */
 .menu2 li #alarm:hover {
- 
+
   cursor: pointer; /* 클릭 가능 커서로 변경 */
   animation: shake 0.5s ease-in-out; /* 0.5초간 흔들림 */
 }
@@ -164,7 +196,7 @@ nav {
   position: relative;
   margin-left: 15px;
   margin-top: 15px;
-  
+
 }
 
 .language-icon {
@@ -251,7 +283,7 @@ nav {
 .sidebar {
   width: 270px;
   position: fixed;
-  top: 200px; /* 네비 바로 아래 위치 */
+  top: 150px; /* 네비 바로 아래 위치 */
   left: 35px;
   height: 100%;
   background-color: #ecfee8;
@@ -285,7 +317,7 @@ nav {
 
 main {
   padding: 20px;
-  margin-top: 250px; /* 헤더 + 네비게이션의 높이만큼 여백 추가 */
+  margin-top: 200px; /* 헤더 + 네비게이션의 높이만큼 여백 추가 */
   margin-left: 290px; /* 사이드바 너비만큼 여백 추가 */
   text-align: center;
 }
